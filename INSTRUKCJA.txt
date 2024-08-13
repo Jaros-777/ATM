@@ -1,0 +1,20 @@
+Dzień Dobry
+Oto opis programu ,,Bankomat,,
+
+Program na poczatku prosi nas o PIN. Należy wpisac ,,1234,, lub ,,1111,,. Są to domyśle PINY.
+
+W pliku ,,konta.txt,, mamy dane uzytkownikow:
+-PIN
+-Imie
+-Nazwisko
+-Stan konta
+-Max Debet
+
+Program umożliwia nam:
+- sprawdzenie aktualnego salda - w wybranej walucie (ustawia sie ją w menu lub przy wpłacie/ wypłacie)
+- wypłacania i wpłacania gotówki w 3 walutach (PLN, EUR i USD), 
+- zmianę maksymalnego debetu, 
+- zmianę waluty
+- zobaczenie informacji o koncie - imię, nazwisko, saldo konta i max debet.
+
+
