@@ -1,0 +1,10 @@
+P1234
+Adam
+Nowak
+3200
+20
+P1111
+Marcin
+Kowalski
+12000
+1500
