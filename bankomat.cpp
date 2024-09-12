@@ -85,10 +85,11 @@ public:
                 {
                     pomylka--;
                     cout << "Nie ma takiej opcji, zostalo " << pomylka + 1 << " prob." << endl;
-                }
-                else
+                }else
+                {
                     cout << "Zostal osiagniety limit pomylek" << endl;
                     KoniecProgramu();
+                }
             }
         }
     }
@@ -97,11 +98,10 @@ public:
     {
         cout << "---- Prosze wsunac karte ----" << endl;
         cout << "\"Wkladanie karty\"" << endl;
-        Sleep(3000);
+        Sleep(2000);
         cout << "---- Prosze czekac trwa przetwarzanie ----" << endl;
-        Sleep(5000);
+        Sleep(2000);
 
-        Logowanie();
     };
     void Logowanie()
     {
@@ -113,20 +113,24 @@ public:
 
         // sprawdzanie PINU
 
-        ifstream odczyt("konta.txt");
+        fstream odczyt("konta.txt");
 
         if (odczyt.good() == true)
         {
+            Start();
             cout << "--- Wpisz PIN ---" << endl;
             cin >> pin;
             pin = 'P' + pin;
+
             while (!odczyt.eof())
             {
+
                 getline(odczyt, wiersz);
+
                 if (wiersz == pin)
                 {
                     poprawny = true;
-                    
+
                     for (int i = 0; i < 4; i++)
                     {
                         getline(odczyt, wiersz);
@@ -158,6 +162,7 @@ public:
             if (poprawny == false)
             {
                 cout << "Nie znaleziono konta o takim PIN-ie" << endl;
+                KoniecProgramu();
             }
             else
             {
@@ -459,6 +464,7 @@ public:
         cout << "\"Wysuwanie karty\"" << endl;
         Sleep(3000);
         cout << "---- Prosze odebrac karte ----" << endl;
+        exit(0);
     }
 
     Bankomat()
@@ -499,7 +505,7 @@ int main()
 {
     Bankomat b1;
 
-    b1.Start();
+    b1.Logowanie();
 
     return 0;
 }
